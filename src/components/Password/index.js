@@ -1,6 +1,6 @@
 import {Component} from 'react'
-import PasswordItem from '../PasswordItem'
 import {v4 as uuidv4} from 'uuid'
+import PasswordItem from '../PasswordItem'
 import './index.css'
 
 class Password extends Component {
@@ -33,6 +33,9 @@ class Password extends Component {
 
     this.setState(prevState => ({
       passwordList: [...prevState.passwordList, newPassword],
+      inputWebsite: '',
+      inputUserName: '',
+      inputPassword: '',
     }))
   }
 
@@ -147,7 +150,7 @@ class Password extends Component {
         <div className="footer-container">
           <div className="count-container">
             <h1 className="counter-heading">
-              Your Passwords <span className="counter">{count}</span>
+              Your Passwords <p className="counter">{count}</p>
             </h1>
             <div className="search-input-card">
               <img
@@ -167,19 +170,22 @@ class Password extends Component {
           <hr className="divide-line" />
           <div className="checkbox-card">
             <input
+              id="check"
               type="checkbox"
               className="checkbox-element"
               placeholder="Search"
               onChange={this.showPassword}
             />
-            <p className="show-password">Show Password</p>
+            <label htmlFor="check" className="show-password">
+              Show passwords
+            </label>
           </div>
 
-          {passwordList.length < 1 ? (
+          {passwordList.length === 0 ? (
             <div className="no-password-container">
               <img
                 src="https://assets.ccbp.in/frontend/react-js/no-passwords-img.png"
-                alt="no password"
+                alt="no passwords"
                 className="no-password-image"
               />
               <p className="no-password">No Passwords</p>
