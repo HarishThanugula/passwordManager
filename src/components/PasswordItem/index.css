@@ -1,0 +1,37 @@
+.password-item {
+  list-style-type: none;
+  display: flex;
+  height: 100px;
+  width: 200px;
+  border: solid 1px white;
+  border-radius: 8px;
+  padding: 4px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+.delete-image {
+  width: 25px;
+  height: 25px;
+}
+.card {
+  margin-right: 20px;
+}
+
+.website {
+  color: white;
+  font-size: 14px;
+}
+.username {
+  color: white;
+  font-size: 10px;
+}
+.password {
+  color: white;
+  font-size: 10px;
+}
+.star-image {
+  width: 60px;
+  height: 10px;
+}
